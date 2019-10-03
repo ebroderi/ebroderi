@@ -293,6 +293,10 @@ public class lca<Key extends Comparable<Key>, Value>
 
 		return max(x.right);
 	}
+	
+	public Key LCA() {
+		return null;
+	}
 }
 
 //Code from BST assignment in second year
