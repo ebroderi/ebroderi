@@ -29,9 +29,22 @@ class lcaTest {
 //From last year's assignment 
 	@Test
 	public void testSize() {
-
+		lca<Integer, Integer> lca = new lca<Integer, Integer>();
+		assertEquals(0, lca.size());
+		
+		lca.put(1, 1); 
+		assertEquals(1, lca.size());
+		
+		lca.put(2, 2);     
+		lca.put(3, 3);       
+		lca.put(4, 4);      
+		lca.put(5, 5);      
+		lca.put(6, 6);       
+		lca.put(7, 7);       
+		lca.put(8, 8); 
+		assertEquals(8, lca.size());
 	}
-
+//From last year's assignment
 	@Test	
 	public void testDelete() {
 
