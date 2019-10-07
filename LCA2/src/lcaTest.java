@@ -26,15 +26,15 @@ class lcaTest {
 
 		assertEquals("(((()1(()2()))3((()4(()5()))6()))7(()8()))", lca.printKeysInOrder());
 	}
-//From last year's assignment 
+	//From last year's assignment 
 	@Test
 	public void testSize() {
 		lca<Integer, Integer> lca = new lca<Integer, Integer>();
 		assertEquals(0, lca.size());
-		
+
 		lca.put(1, 1); 
 		assertEquals(1, lca.size());
-		
+
 		lca.put(2, 2);     
 		lca.put(3, 3);       
 		lca.put(4, 4);      
@@ -44,10 +44,25 @@ class lcaTest {
 		lca.put(8, 8); 
 		assertEquals(8, lca.size());
 	}
-//From last year's assignment
+	//From last year's assignment
 	@Test	
 	public void testDelete() {
+		lca<Integer, Integer> lca = new lca<Integer, Integer>();
+
+		
+		lca.put(7, 7);   
+		lca.put(8, 8);   
+		lca.put(3, 3);   
+		lca.put(1, 1);  
+		lca.put(2, 2);  
+		lca.put(6, 6);   
+		lca.put(4, 4);   
+		lca.put(5, 5);  
+
+		lca.delete(8);
+		assertEquals("Deleting leaf", "(((()1(()2()))3((()4(()5()))6()))7())", lca.printKeysInOrder());
 
 	}
+	//From last year's assignment
 
 }
