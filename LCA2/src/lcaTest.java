@@ -1,12 +1,28 @@
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import org.junit.Test;
 
 class lcaTest {
 
 	@Test
 	public void testLowestCommonAncestor() {
+		lca<Integer, Integer> lca = new lca<Integer, Integer>();
 
+		assertSame("Testing LCA for null root", null, lca.lowestCommonAncestor(lca.root, 1, 2));
+
+		lca.put(7, 7);  
+		lca.put(8, 8);   
+		lca.put(3, 3);  
+		lca.put(1, 1); 
+		lca.put(2, 2);   
+		lca.put(6, 6);   
+		lca.put(4, 4);   
+		lca.put(5, 5);   
+		
+		assertSame("Test left side", 3, lca.lowestCommonAncestor(lca.root, 2,6));
+		assertSame("Test right side", 7, lca.lowestCommonAncestor(lca.root, 8,3));
+		assertSame("Test where LCA is one of the nodes", 7, lca.lowestCommonAncestor(lca.root, 7,8));
+		
 	}
 
 	@Test
@@ -49,7 +65,7 @@ class lcaTest {
 	public void testDelete() {
 		lca<Integer, Integer> lca = new lca<Integer, Integer>();
 
-		
+
 		lca.put(7, 7);   
 		lca.put(8, 8);   
 		lca.put(3, 3);   

@@ -7,7 +7,9 @@ import java.util.NoSuchElementException;
 
 public class lca<Key extends Comparable<Key>, Value> 
 {
-	private Node root;             
+	Node root;
+	
+	         
 	private String stringOutput = "";
 	private String multiLineOutput = "";
 	private String prefix = "";
