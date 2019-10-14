@@ -5,6 +5,11 @@ public class DAG {
 	private int E;
 	private ArrayList<Integer>[] adj; 
 	private int[] indegree;
+	private boolean visited[]; //take note of the vertices that have been visited
+	private boolean cycleExists;//true if a cycle exists
+	private boolean stack[];//take note of the order in which the vertices are visited
+	//As the graphs must be acyclic, must create function to detect cycles
+
 	
 	public DAG(int V){
 		if(V<0) throw new IllegalArgumentException("Number of vertices in a Digraph must be nonnegative");
@@ -64,6 +69,28 @@ public class DAG {
 			}
 		}
 		return reverse;
+	}
+	
+	public boolean cycleExists() {
+		return cycleExists;
+	}
+	
+	public void detectCycle(int v) {
+		visited[v]=true;
+		stack[v]=true;
+		
+		for(int w:adj(v)) {
+			if(!visited[w]) 
+			{
+				detectCycle(w);
+			}
+			else if(stack[w]) 
+			{
+				cycleExists=true;
+				return;
+			}
+		}
+		stack[v]=false;
 	}
 }
 //Using Sedgewick and Wayne's Digraph class 
