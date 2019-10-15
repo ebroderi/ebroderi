@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class DAG {
 	private final int V;
@@ -94,5 +96,38 @@ public class DAG {
 		}
 		stack[v]=false;
 	}
+	
+	
+	//Algorithms and data structures last year 
+	public ArrayList<Integer> BFS(int s)
+    {
+        boolean hasBeenVisited[] = new boolean[V];
+
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        ArrayList<Integer> order= new ArrayList<Integer>();
+
+        hasBeenVisited[s]=true;
+        queue.add(s);
+
+
+        while (queue.size() != 0)
+        {
+            s = queue.poll();           
+            order.add(s);
+            Iterator<Integer> i = adj[s].listIterator();
+            while (i.hasNext())
+            {
+                int n = i.next();
+                if (!hasBeenVisited[n])
+                {
+                    hasBeenVisited[n] = true;
+                    queue.add(n);
+                }
+            }
+        }
+
+        return order;
+
+    }
 }
 //Using Sedgewick and Wayne's Digraph class 
