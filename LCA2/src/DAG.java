@@ -35,19 +35,25 @@ public class DAG {
 	return E;	
 	}
 	
-	private void validateVertex(int v) {
+	private int validateVertex(int v) {
 		if(v<0||v>=V) {
-			throw new IllegalArgumentException("vertex"+v+"is not between 0 and "+(V-1));
+			return -1;
+		}
+		else {
+			return 1;
 		}
 	}
 	
 	public void addEdge(int v, int w)
 	{
-		validateVertex(v);
-		validateVertex(w);
+		int validateV=validateVertex(v);
+		int validateW=validateVertex(w);
+		if((validateV==1)&&(validateW==1)) 
+		{
 		adj[v].add(w);
 		indegree[w]++;
 		E++;
+		}
 	}
 	
 	public Iterable<Integer> adj(int v){
