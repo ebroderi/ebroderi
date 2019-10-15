@@ -9,11 +9,11 @@ class DAGTest {
 	public void testAddEdge() {
 		DAG addEdgeTest=new DAG(7);
 		addEdgeTest.addEdge(1, 2);
-		assertEquals("Testing number of egdes equals one", 1, addEdgeTest.E());
+		assertEquals("Testing number of edges equals one", 1, addEdgeTest.E());
 		addEdgeTest.addEdge(2, 5);
-		assertEquals("Testing number of egdes equals two", 2, addEdgeTest.E());
+		assertEquals("Testing number of edges equals two", 2, addEdgeTest.E());
 		addEdgeTest.addEdge(-5, -3);
-		assertEquals("Testing number of egdes equals two", 2, addEdgeTest.E());
+		assertEquals("Testing number of edges equals two", 2, addEdgeTest.E());
 	}
 
 }
