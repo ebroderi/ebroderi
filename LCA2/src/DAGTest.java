@@ -8,7 +8,7 @@ class DAGTest {
 	
 	@Test
 	public void testConstructor() {
-		DAG testDAG= new DAG(7);
+		DAG testDAG= new DAG(8);
 		testDAG.addEdge(2,4);
 		testDAG.addEdge(2,3);
 		testDAG.addEdge(3,6);
@@ -17,8 +17,8 @@ class DAGTest {
 	
 		assertEquals("",2,testDAG.indegree(6));
 		assertEquals("",1,testDAG.outdegree(4));
-		assertEquals("",4,testDAG.E());
-		assertEquals("",7,testDAG.V());
+		assertEquals("",5,testDAG.E());
+		assertEquals("",8,testDAG.V());
 	}
 	
 	
