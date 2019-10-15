@@ -14,6 +14,9 @@ class DAGTest {
 		assertEquals("Testing number of edges equals two", 2, addEdgeTest.E());
 		addEdgeTest.addEdge(-5, -3);
 		assertEquals("Testing number of edges equals two", 2, addEdgeTest.E());
+		addEdgeTest.addEdge(4, 6);
+		assertEquals("Testing number of edges equals three", 3, addEdgeTest.E());
+		
 	}
 
 }
