@@ -5,6 +5,23 @@ import org.junit.jupiter.api.Test;
 
 class DAGTest {
 
+	
+	@Test
+	public void testConstructor() {
+		DAG testDAG= new DAG(7);
+		testDAG.addEdge(2,4);
+		testDAG.addEdge(3,6);
+		testDAG.addEdge(4,6);
+		testDAG.addEdge(5,6);
+		testDAG.addEdge(6,7);
+		testDAG.addEdge(6,8);
+		
+		assertEquals("",3,testDAG.indegree(6));
+		assertEquals("",2,testDAG.outdegree(6));
+		assertEquals("",6,testDAG.E());
+		assertEquals("",7,testDAG.V());
+		
+	}
 	@Test
 	public void testAddEdge() {
 		DAG addEdgeTest=new DAG(7);
@@ -28,5 +45,7 @@ class DAGTest {
 		hasCycle.detectCycle(2);
 		assertTrue(hasCycle.cycleExists());
 	}
+	
+	
 
 }

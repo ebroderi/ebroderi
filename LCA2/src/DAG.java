@@ -62,8 +62,14 @@ public class DAG {
 	}
 	
 	public int outdegree(int v) {
-		validateVertex(v);
-		return adj[v].size();
+		if(validateVertex(v)<0) 
+		{
+			return -1;
+		}
+		else
+		{
+			return adj[v].size();
+		}
 	}
 	
 	public int indegree(int v) {
