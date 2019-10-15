@@ -10,18 +10,18 @@ class DAGTest {
 	public void testConstructor() {
 		DAG testDAG= new DAG(7);
 		testDAG.addEdge(2,4);
+		testDAG.addEdge(2,3);
 		testDAG.addEdge(3,6);
 		testDAG.addEdge(4,6);
-		testDAG.addEdge(5,6);
 		testDAG.addEdge(6,7);
-		testDAG.addEdge(6,8);
-		
-		assertEquals("",3,testDAG.indegree(6));
-		assertEquals("",2,testDAG.outdegree(6));
-		assertEquals("",6,testDAG.E());
+	
+		assertEquals("",2,testDAG.indegree(6));
+		assertEquals("",1,testDAG.outdegree(4));
+		assertEquals("",4,testDAG.E());
 		assertEquals("",7,testDAG.V());
-		
 	}
+	
+	
 	@Test
 	public void testAddEdge() {
 		DAG addEdgeTest=new DAG(7);
