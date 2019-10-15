@@ -18,5 +18,15 @@ class DAGTest {
 		assertEquals("Testing number of edges equals three", 3, addEdgeTest.E());
 		
 	}
+	
+	@Test
+	public void testForCycle() {
+		DAG hasCycle=new DAG(10);
+		hasCycle.addEdge(2, 4);
+		hasCycle.addEdge(4,6);
+		hasCycle.addEdge(2,6);
+		hasCycle.detectCycle(2);
+		assertTrue(hasCycle.cycleExists());
+	}
 
 }
