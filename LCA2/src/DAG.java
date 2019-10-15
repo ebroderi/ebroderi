@@ -16,6 +16,8 @@ public class DAG {
 		this.V=V;
 		this.E=0;
 		indegree=new int[V];
+		stack=new boolean[V];
+		visited=new boolean[V];
 		adj=(ArrayList<Integer>[]) new ArrayList[V];
 		for(int v=0; v<V; v++)
 		{
