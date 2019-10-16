@@ -149,10 +149,10 @@ public class DAG {
 		}
 		
 		
+		DAG reverse=reverse();
 		
-		
-		ArrayList<Integer> pathV=BFS(v);
-		ArrayList<Integer> pathW=BFS(w);
+		ArrayList<Integer> pathV=reverse.BFS(v);
+		ArrayList<Integer> pathW=reverse.BFS(w);
 		ArrayList<Integer> commonAncestors=new ArrayList<Integer>();
 		boolean found= false;
 		
