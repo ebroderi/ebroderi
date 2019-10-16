@@ -142,6 +142,39 @@ public class DAG {
 
     }
 	
+	public int findLCA(int v, int w ) {
+		detectCycle(0);
+		if(cycleExists) {
+			return -1;
+		}
+		
+		ArrayList<Integer> pathV=BFS(v);
+		ArrayList<Integer> pathW=BFS(w);
+		ArrayList<Integer> commonAncestors=new ArrayList<Integer>();
+		boolean found= false;
+		
+		for(int i=0; i<pathV.size(); i++)
+		{
+			for(int j=0; j<pathW.size(); j++)
+			{
+				if(pathV.get(i)==pathW.get(j))
+				{
+					commonAncestors.add(pathV.get(i));
+					found=true;
+				}
+			}
+		}
+		
+		if(found)
+		{
+			return commonAncestors.get(0);
+		}
+		else
+		{
+			return -1;
+		}
+	}
+	
 	
 }
 //Using Sedgewick and Wayne's Digraph class 
