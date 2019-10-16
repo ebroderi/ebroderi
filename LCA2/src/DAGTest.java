@@ -48,9 +48,11 @@ class DAGTest {
 		DAG noCycle=new DAG(10);
 		noCycle.addEdge(2, 4);
 		noCycle.addEdge(4, 6);
-		noCycle.addEdge(3, 6);
+		noCycle.addEdge(5, 6);
 		noCycle.detectCycle(2);
 		assertFalse(noCycle.cycleExists());
+		
+		
 	}
 	
 	
