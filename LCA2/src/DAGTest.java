@@ -70,7 +70,11 @@ class DAGTest {
 		 lca.addEdge(7, 8);
 		 lca.addEdge(8, 9);
 		 
-		 assertEquals("Finding LCA for 6 and 7", 5, lca.findLCA(6, 7));
+		 assertEquals("LCA for 1 and 2", 0, lca.findLCA(1, 2));
+		 assertEquals("LCA for 6 and 7", 5, lca.findLCA(6, 7));
+		 assertEquals("LCA for 3 and 4", 0, lca.findLCA(3,4));
+		 assertEquals("LCA for 8 and 9", 8, lca.findLCA(8, 9));
+		 assertEquals("LCA for 5 and 9", 5, lca.findLCA(5, 9));
 		 
 	}
 	
