@@ -44,6 +44,13 @@ class DAGTest {
 		hasCycle.addEdge(6,2);
 		hasCycle.detectCycle(2);
 		assertTrue(hasCycle.cycleExists());
+		
+		DAG noCycle=new DAG(10);
+		noCycle.addEdge(2, 4);
+		noCycle.addEdge(4, 6);
+		noCycle.addEdge(3, 6);
+		noCycle.detectCycle(2);
+		assertFalse(noCycle.cycleExists());
 	}
 	
 	
