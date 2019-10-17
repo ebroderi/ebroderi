@@ -92,5 +92,24 @@ class DAGTest {
 		assertEquals("LCA for 3 and 4", 1, lca.findLCA(3, 4));
 		assertEquals("LCA when node doesn't exist", -1, lca.findLCA(5, 7));
 	}
+	
+	public void cyclicGraphTest() {
+		DAG lca=new DAG(8);
+		lca.addEdge(0, 1);
+		lca.addEdge(0, 2);
+		lca.addEdge(2, 3);
+		lca.addEdge(3, 4);
+		lca.addEdge(4, 2);
+		lca.addEdge(4, 5);
+		lca.addEdge(5, 6);
+		lca.addEdge(6, 7);
+		
+		assertEquals("Cyclic graph so answer should be -1", -1, lca.findLCA(1, 2));
+		assertEquals("Cyclic graph so answer should be -1", -1, lca.findLCA(2, 3));
+		assertEquals("Cyclic graph so answer should be -1", -1, lca.findLCA(4, 5));
+		assertEquals("Cyclic graph so answer should be -1", -1, lca.findLCA(6, 7));
+	}
+	
+	
 
 }
